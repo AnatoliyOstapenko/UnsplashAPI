@@ -259,6 +259,8 @@
 		};
 		F93DEB2F2D60C863004DABB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = F93DEB222D60C860004DABB5 /* UnsplashAPI */;
+			baseConfigurationReferenceRelativePath = Configuration/Configuration.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -289,6 +291,8 @@
 		};
 		F93DEB302D60C863004DABB5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = F93DEB222D60C860004DABB5 /* UnsplashAPI */;
+			baseConfigurationReferenceRelativePath = Configuration/Configuration.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
