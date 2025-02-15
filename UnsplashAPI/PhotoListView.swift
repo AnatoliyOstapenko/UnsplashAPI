@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct PhotoListView: View {
-    @ObservedObject var viewModel: PhotoListViewModel
+    @StateObject var viewModel: PhotoListViewModel
+    @State private var showingSnackbar = false
     
     var body: some View {
         NavigationStack {
             VStack {
                 GeometryReader { geometry in
                     List {
-                        ForEach(viewModel.photos) { photo in
+                        ForEach(viewModel.state.photos) { photo in
                             NavigationLink(destination: PhotoDetailView(photo: photo)) {
                                 PhotoRowView(photo: photo, geometry: geometry)
                             }
@@ -29,22 +30,33 @@ struct PhotoListView: View {
                     .scrollContentBackground(.hidden)
                     
                     // Empty View
-                    if !viewModel.isLoading && viewModel.photos.isEmpty {
+                    if !viewModel.state.isLoading && viewModel.state.photos.isEmpty {
                         ErrorEmptyView(type: .emptyList)
                     }
                 }
                 .frame(maxHeight: .infinity)
             }
             .navigationTitle("Unsplash Photos")
-            .blur(radius: viewModel.isLoading ? 5 : 0)
-            .alert(
-                isPresented: $viewModel.hasError,
-                error: viewModel.errorMessage,
-                actions: {
-                    Button("OK", role: .cancel) {}
-                })
-
-            if viewModel.isLoading {
+            
+            // Show Snackbar if an error exists
+            if let error = viewModel.state.error {
+                ErrorSnackbarView(
+                    message: error.localizedDescription,
+                    onRetry: {
+                        viewModel.fetchPhotos()
+                        showingSnackbar = false
+                    },
+                    onDismiss: {
+                        showingSnackbar = false
+                    }
+                )
+                .onAppear {
+                    showingSnackbar = true
+                }
+            }
+            
+            // Loading Overlay
+            if viewModel.state.isLoading {
                 ProgressView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                     .background(Color(.secondarySystemBackground).ignoresSafeArea())

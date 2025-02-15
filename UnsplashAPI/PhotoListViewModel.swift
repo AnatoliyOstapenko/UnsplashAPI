@@ -9,38 +9,37 @@ import SwiftUI
 import Combine
 
 class PhotoListViewModel: ObservableObject {
-    @Published var photos: [UnsplashPhoto] = []
-    @Published var errorMessage: APIError?
-    @Published var hasError = false
-    @Published var isLoading = false
-
+    @Published var state: AppState
+    private let store: Store
     private let apiService: APIServiceProtocol
     private var cancellables: Set<AnyCancellable> = []
 
-    init(apiService: APIServiceProtocol) {
+    init(store: Store, apiService: APIServiceProtocol) {
+        self.store = store
         self.apiService = apiService
+        self.state = store.state
+
+        store.$state
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$state)
+
         fetchPhotos()
     }
 
     func fetchPhotos() {
-        isLoading = true
-        
+        store.dispatch(.fetchPhotos)
+
         apiService.fetchPhotos()
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] completion in
-                guard let self = self else { return }
-                self.isLoading = false
-                
-                if case .failure(let apiError) = completion {
-                    Logger.log("Error fetching photos: \(apiError)", level: .error)
-                    self.hasError = true
-                    self.errorMessage = apiError
-                }
-            } receiveValue: { [weak self] response in
-                guard let self = self else { return }
-                self.hasError = false
-                self.photos = response
-            }.store(in: &cancellables)
+            .sink(receiveCompletion: { completion in
+                    if case .failure(let apiError) = completion {
+                        self.store.dispatch(.fetchPhotosFailure(apiError))
+                        Logger.log("Error fetching photos: \(apiError)", level: .error)
+                    }
+            }, receiveValue: { photos in
+                self.store.dispatch(.fetchPhotosSuccess(photos))
+            })
+            .store(in: &cancellables)
     }
 }
 
