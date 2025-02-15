@@ -12,7 +12,7 @@ struct PhotoListView: View {
     
     var body: some View {
         NavigationStack {
-            ZStack {
+            VStack {
                 GeometryReader { geometry in
                     List {
                         ForEach(viewModel.photos) { photo in
@@ -22,35 +22,33 @@ struct PhotoListView: View {
                         }
                         .listRowSeparator(.hidden)
                     }
+                    .refreshable {
+                        viewModel.fetchPhotos()
+                    }
                     .scrollIndicators(.hidden)
                     .scrollContentBackground(.hidden)
                     
+                    // Empty View
+                    if !viewModel.isLoading && viewModel.photos.isEmpty {
+                        ErrorEmptyView(type: .emptyList)
+                    }
                 }
-                .refreshable {
-                    viewModel.fetchPhotos()
-                }
-                
-                .navigationTitle("Unsplash Photos")
-                
-                .blur(radius: viewModel.isLoading ? 5 : 0)
-                .alert(
-                    isPresented: $viewModel.hasError,
-                    error: viewModel.errorMessage,
-                    actions: {
-                        Button("OK", role: .cancel) {}
-                    })
-                // Empty statement
-                if !viewModel.isLoading && viewModel.photos.isEmpty  {
-                    ErrorEmptyView(type: .emptyList)
-                }
-                if viewModel.isLoading {
-                    ProgressView()
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                        .background(Color(.secondarySystemBackground).ignoresSafeArea())
-                }
+                .frame(maxHeight: .infinity)
+            }
+            .navigationTitle("Unsplash Photos")
+            .blur(radius: viewModel.isLoading ? 5 : 0)
+            .alert(
+                isPresented: $viewModel.hasError,
+                error: viewModel.errorMessage,
+                actions: {
+                    Button("OK", role: .cancel) {}
+                })
+
+            if viewModel.isLoading {
+                ProgressView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                    .background(Color(.secondarySystemBackground).ignoresSafeArea())
             }
         }
     }
 }
-
-
