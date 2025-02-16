@@ -21,18 +21,18 @@ struct PhotoDetailView: View {
                     .fade(duration: 0.3)
                     .resizable()
                     .scaledToFit()
-                    .padding()
-
-                Text("Photographer: \(photo.user.name)")
-                    .font(.title2)
-                    .padding(.bottom)
-
-                if let description = photo.description {
-                    Text(description)
-                        .font(.body)
-                        .padding()
+                Group {
+                    Text("Photographer: \(photo.user.name)")
+                        .font(.title2)
+                    if let description = photo.description {
+                        Text(description)
+                            .font(.body)
+                            .foregroundStyle(Color.gray)
+                    }
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
+            .padding(.horizontal)
         }
         .navigationTitle("Photo Details")
     }
