@@ -38,5 +38,6 @@ struct PhotoRowView: View {
             }
         }
         .padding(.vertical, 4)
+        .frame(height: geometry.size.width * 0.2)
     }
 }

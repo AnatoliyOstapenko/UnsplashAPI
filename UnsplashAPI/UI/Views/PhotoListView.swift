@@ -42,13 +42,10 @@ struct PhotoListView: View {
             if let error = viewModel.state.error {
                 ErrorSnackbarView(
                     message: error.localizedDescription,
-                    onRetry: {
-                        viewModel.fetchPhotos()
-                        showingSnackbar = false
-                    },
                     onDismiss: {
                         showingSnackbar = false
-                    }
+                    },
+                    isVisible: $showingSnackbar
                 )
                 .onAppear {
                     showingSnackbar = true

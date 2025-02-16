@@ -11,8 +11,19 @@
 		F93DED6C2D60EBF2004DABB5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F93DED6B2D60EBF2004DABB5 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F97D5C112D6229BD00740DE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F93DEB182D60C860004DABB5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F93DEB1F2D60C860004DABB5;
+			remoteInfo = UnsplashAPI;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		F93DEB202D60C860004DABB5 /* UnsplashAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnsplashAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F97D5C0D2D6229BD00740DE4 /* UnsplashAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnsplashAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -34,6 +45,11 @@
 			path = UnsplashAPI;
 			sourceTree = "<group>";
 		};
+		F97D5C0E2D6229BD00740DE4 /* UnsplashAPITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = UnsplashAPITests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +62,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F97D5C0A2D6229BD00740DE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -53,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				F93DEB222D60C860004DABB5 /* UnsplashAPI */,
+				F97D5C0E2D6229BD00740DE4 /* UnsplashAPITests */,
 				F93DEB212D60C860004DABB5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				F93DEB202D60C860004DABB5 /* UnsplashAPI.app */,
+				F97D5C0D2D6229BD00740DE4 /* UnsplashAPITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,6 +117,29 @@
 			productReference = F93DEB202D60C860004DABB5 /* UnsplashAPI.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F97D5C0C2D6229BD00740DE4 /* UnsplashAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F97D5C132D6229BD00740DE4 /* Build configuration list for PBXNativeTarget "UnsplashAPITests" */;
+			buildPhases = (
+				F97D5C092D6229BD00740DE4 /* Sources */,
+				F97D5C0A2D6229BD00740DE4 /* Frameworks */,
+				F97D5C0B2D6229BD00740DE4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F97D5C122D6229BD00740DE4 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F97D5C0E2D6229BD00740DE4 /* UnsplashAPITests */,
+			);
+			name = UnsplashAPITests;
+			packageProductDependencies = (
+			);
+			productName = UnsplashAPITests;
+			productReference = F97D5C0D2D6229BD00740DE4 /* UnsplashAPITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -104,6 +152,10 @@
 				TargetAttributes = {
 					F93DEB1F2D60C860004DABB5 = {
 						CreatedOnToolsVersion = 16.0;
+					};
+					F97D5C0C2D6229BD00740DE4 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = F93DEB1F2D60C860004DABB5;
 					};
 				};
 			};
@@ -126,12 +178,20 @@
 			projectRoot = "";
 			targets = (
 				F93DEB1F2D60C860004DABB5 /* UnsplashAPI */,
+				F97D5C0C2D6229BD00740DE4 /* UnsplashAPITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F93DEB1E2D60C860004DABB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F97D5C0B2D6229BD00740DE4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -148,7 +208,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F97D5C092D6229BD00740DE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F97D5C122D6229BD00740DE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F93DEB1F2D60C860004DABB5 /* UnsplashAPI */;
+			targetProxy = F97D5C112D6229BD00740DE4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F93DEB2C2D60C863004DABB5 /* Debug */ = {
@@ -279,7 +354,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"UnsplashAPI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = K33FXWL25N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -311,7 +386,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"UnsplashAPI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = K33FXWL25N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -334,6 +409,42 @@
 			};
 			name = Release;
 		};
+		F97D5C142D6229BD00740DE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K33FXWL25N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = anatoliyostapenko.github.io.UnsplashAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnsplashAPI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UnsplashAPI";
+			};
+			name = Debug;
+		};
+		F97D5C152D6229BD00740DE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K33FXWL25N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = anatoliyostapenko.github.io.UnsplashAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnsplashAPI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UnsplashAPI";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -351,6 +462,15 @@
 			buildConfigurations = (
 				F93DEB2F2D60C863004DABB5 /* Debug */,
 				F93DEB302D60C863004DABB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F97D5C132D6229BD00740DE4 /* Build configuration list for PBXNativeTarget "UnsplashAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F97D5C142D6229BD00740DE4 /* Debug */,
+				F97D5C152D6229BD00740DE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
