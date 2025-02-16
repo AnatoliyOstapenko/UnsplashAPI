@@ -6,8 +6,24 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F93DED692D60EBDE004DABB5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F93DED682D60EBDE004DABB5 /* Alamofire */; };
+		F93DED6C2D60EBF2004DABB5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F93DED6B2D60EBF2004DABB5 /* Kingfisher */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F97D5C112D6229BD00740DE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F93DEB182D60C860004DABB5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F93DEB1F2D60C860004DABB5;
+			remoteInfo = UnsplashAPI;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		F93DEB202D60C860004DABB5 /* UnsplashAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnsplashAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F97D5C0D2D6229BD00740DE4 /* UnsplashAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnsplashAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -29,10 +45,24 @@
 			path = UnsplashAPI;
 			sourceTree = "<group>";
 		};
+		F97D5C0E2D6229BD00740DE4 /* UnsplashAPITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = UnsplashAPITests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F93DEB1D2D60C860004DABB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F93DED6C2D60EBF2004DABB5 /* Kingfisher in Frameworks */,
+				F93DED692D60EBDE004DABB5 /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F97D5C0A2D6229BD00740DE4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				F93DEB222D60C860004DABB5 /* UnsplashAPI */,
+				F97D5C0E2D6229BD00740DE4 /* UnsplashAPITests */,
 				F93DEB212D60C860004DABB5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				F93DEB202D60C860004DABB5 /* UnsplashAPI.app */,
+				F97D5C0D2D6229BD00740DE4 /* UnsplashAPITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,10 +110,35 @@
 			);
 			name = UnsplashAPI;
 			packageProductDependencies = (
+				F93DED682D60EBDE004DABB5 /* Alamofire */,
+				F93DED6B2D60EBF2004DABB5 /* Kingfisher */,
 			);
 			productName = UnsplashAPI;
 			productReference = F93DEB202D60C860004DABB5 /* UnsplashAPI.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F97D5C0C2D6229BD00740DE4 /* UnsplashAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F97D5C132D6229BD00740DE4 /* Build configuration list for PBXNativeTarget "UnsplashAPITests" */;
+			buildPhases = (
+				F97D5C092D6229BD00740DE4 /* Sources */,
+				F97D5C0A2D6229BD00740DE4 /* Frameworks */,
+				F97D5C0B2D6229BD00740DE4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F97D5C122D6229BD00740DE4 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F97D5C0E2D6229BD00740DE4 /* UnsplashAPITests */,
+			);
+			name = UnsplashAPITests;
+			packageProductDependencies = (
+			);
+			productName = UnsplashAPITests;
+			productReference = F97D5C0D2D6229BD00740DE4 /* UnsplashAPITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -96,6 +153,10 @@
 					F93DEB1F2D60C860004DABB5 = {
 						CreatedOnToolsVersion = 16.0;
 					};
+					F97D5C0C2D6229BD00740DE4 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = F93DEB1F2D60C860004DABB5;
+					};
 				};
 			};
 			buildConfigurationList = F93DEB1B2D60C860004DABB5 /* Build configuration list for PBXProject "UnsplashAPI" */;
@@ -107,18 +168,30 @@
 			);
 			mainGroup = F93DEB172D60C860004DABB5;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F93DED672D60EBDE004DABB5 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F93DED6A2D60EBF2004DABB5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F93DEB212D60C860004DABB5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				F93DEB1F2D60C860004DABB5 /* UnsplashAPI */,
+				F97D5C0C2D6229BD00740DE4 /* UnsplashAPITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F93DEB1E2D60C860004DABB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F97D5C0B2D6229BD00740DE4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -135,7 +208,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F97D5C092D6229BD00740DE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F97D5C122D6229BD00740DE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F93DEB1F2D60C860004DABB5 /* UnsplashAPI */;
+			targetProxy = F97D5C112D6229BD00740DE4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F93DEB2C2D60C863004DABB5 /* Debug */ = {
@@ -259,12 +347,14 @@
 		};
 		F93DEB2F2D60C863004DABB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = F93DEB222D60C860004DABB5 /* UnsplashAPI */;
+			baseConfigurationReferenceRelativePath = Configuration/Configuration.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"UnsplashAPI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = K33FXWL25N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -289,12 +379,14 @@
 		};
 		F93DEB302D60C863004DABB5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = F93DEB222D60C860004DABB5 /* UnsplashAPI */;
+			baseConfigurationReferenceRelativePath = Configuration/Configuration.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"UnsplashAPI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = K33FXWL25N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -314,6 +406,42 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F97D5C142D6229BD00740DE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K33FXWL25N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = anatoliyostapenko.github.io.UnsplashAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnsplashAPI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UnsplashAPI";
+			};
+			name = Debug;
+		};
+		F97D5C152D6229BD00740DE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K33FXWL25N;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = anatoliyostapenko.github.io.UnsplashAPITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnsplashAPI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UnsplashAPI";
 			};
 			name = Release;
 		};
@@ -338,7 +466,48 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		F97D5C132D6229BD00740DE4 /* Build configuration list for PBXNativeTarget "UnsplashAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F97D5C142D6229BD00740DE4 /* Debug */,
+				F97D5C152D6229BD00740DE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F93DED672D60EBDE004DABB5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		F93DED6A2D60EBF2004DABB5 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F93DED682D60EBDE004DABB5 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F93DED672D60EBDE004DABB5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		F93DED6B2D60EBF2004DABB5 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F93DED6A2D60EBF2004DABB5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F93DEB182D60C860004DABB5 /* Project object */;
 }

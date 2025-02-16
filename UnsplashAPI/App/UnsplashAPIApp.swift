@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct UnsplashAPIApp: App {
+    private let store = Store(initialState: AppState(), reducer: appReducer)
+    private let apiService = APIService()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PhotoListView(viewModel: PhotoListViewModel(store: store, apiService: apiService))
         }
     }
 }

@@ -1,0 +1,15 @@
+//
+//  Configuration.xcconfig
+//  UnsplashAPI
+//
+//  Created by Anatoliy Ostapenko on 15.02.2025.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// Api key for Unsplash API
+API_KEY = PmZDHcGDO0rVIUcgsPcsBFlZ1XjPj-bAWrh88uj1GX4
+
+// Base URL for Unsplash API
+BASE_URL = https:/$()/api.unsplash.com
