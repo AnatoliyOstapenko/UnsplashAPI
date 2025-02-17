@@ -7,7 +7,8 @@
 
 import Foundation
 
-enum APIError: Error, LocalizedError, Equatable {
+enum APIError: Error, LocalizedError, Identifiable {
+    var id: String { UUID().uuidString }
     case invalidURL
     case requestFailed(Error)
     case invalidResponse
@@ -15,7 +16,7 @@ enum APIError: Error, LocalizedError, Equatable {
     case offline
     case unknown(Error)
     
-    var errorDescription: String? {
+    var errorDescription: String {
         switch self {
         case .invalidURL, .invalidResponse:
             return "Something went wrong, try again later"
@@ -29,21 +30,4 @@ enum APIError: Error, LocalizedError, Equatable {
             return "An unknown error occurred: \(error.localizedDescription)"
         }
     }
-    
-    static func == (lhs: APIError, rhs: APIError) -> Bool {
-            switch (lhs, rhs) {
-            case (.invalidURL, .invalidURL):
-                return true
-            case (.requestFailed, .requestFailed):
-                return true
-            case (.invalidResponse, .invalidResponse):
-                return true
-            case (.decodingError, .decodingError):
-                return true
-            case (.offline, .offline):
-                return true
-            default:
-                return false
-            }
-        }
 }
