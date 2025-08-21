@@ -20,13 +20,13 @@ class APIService: APIServiceProtocol {
 }
 
 extension APIService {
-    private func request<T: Decodable>(endpoint: API, method: HTTPMethod = .get) -> AnyPublisher<T, APIError> {
+    private func request<T: Decodable>(endpoint: API) -> AnyPublisher<T, APIError> {
 
         return AF.request(
             endpoint.url,
-            method: method,
+            method: endpoint.method,
             parameters: endpoint.parameters,
-            encoding: URLEncoding.default
+            encoding: endpoint.encoding
         )
         .validate()
         .publishDecodable(type: T.self)

@@ -11,10 +11,12 @@ import SwiftUI
 struct UnsplashAPIApp: App {
     private let store = Store(initialState: AppState(), reducer: appReducer)
     private let apiService = APIService()
+    private let snackbar = SnackBarHelper()
     
     var body: some Scene {
         WindowGroup {
             PhotoListView(viewModel: PhotoListViewModel(store: store, apiService: apiService))
+                .environmentObject(snackbar)
         }
     }
 }

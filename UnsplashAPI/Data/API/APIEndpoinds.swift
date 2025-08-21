@@ -8,10 +8,10 @@
 import Foundation
 
 public struct APIEndpoinds {
-    static var baseURL: String {
-        return WebUrl.prodUrl
-    }
+    // Base url
+    static private let baseURL = Environment.baseUrl
     
+    // Endpoints
     static var photosURL: String {
         return baseURL + "/photos"
     }
