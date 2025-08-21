@@ -1,5 +1,5 @@
 # Unsplash API
-SwiftUI Application with Networking and UI Components
+SwiftUI Application --- Redux architectural pattern
 ## Description  
 
 Building an iOS app that displays a list of photos from Unsplash API and allows users to view details of each photo upon
