@@ -31,3 +31,20 @@ enum APIError: Error, LocalizedError, Identifiable {
         }
     }
 }
+
+extension APIError: Equatable {
+    static func == (lhs: APIError, rhs: APIError) -> Bool {
+        switch (lhs, rhs) {
+        case (.invalidURL, .invalidURL),
+            (.invalidResponse, .invalidResponse),
+            (.offline, .offline):
+            return true
+        case (.requestFailed, .requestFailed),
+            (.decodingError, .decodingError),
+            (.unknown, .unknown):
+            return true
+        default:
+            return false
+        }
+    }
+}
